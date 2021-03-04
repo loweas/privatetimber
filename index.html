@@ -44,11 +44,30 @@
   }).addTo(map);
   var benton = new L.GeoJSON.AJAX("assets/benton.geojson").addTo(map);
 
-  var lincoln= new L.GeoJSON.AJAX("assets/lincoln.geojson").addTo(map);
+var clackamas = new L.GeoJSON.AJAX("assets/clackamas.geojson");
+var josephine = new L.GeoJSON.AJAX("assets/josephine.geojson");
+var linn = new L.GeoJSON.AJAX("assets/linn.geojson");
+var polk = new L.GeoJSON.AJAX("assets/polk.geojson");
+var tillamook = new L.GeoJSON.AJAX("assets/tillamook.geojson");
+var lincoln = new L.GeoJSON.AJAX("assets/lincoln.geojson");
+var lane = new L.GeoJSON.AJAX("assets/lane.geojson");
 
-                var legend = L.control({position: 'topright'});
-            // var lcontrol =  L.control.layers(baselayer,overlayMaps,{collapsed:false,position: 'bottomleft'}).addTo(map);
 
+var baseMaps = {
+  "Benton": benton,
+  "Lincoln" : lincoln,
+  "Lane": lane,
+    "Clackamas": clackamas,
+"Josephine": josephine,
+"Linn": linn,
+"Polk": polk,
+"Tillamook" : tillamook,
+};
+
+var overlayMaps = {
+
+};
+  L.control.layers(baseMaps, overlayMaps,{collapsed:false,position: 'bottomleft'}).addTo(map);
   </script>
 </body>
 
